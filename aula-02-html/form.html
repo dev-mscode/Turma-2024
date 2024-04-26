@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>from</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        div{
+            
+            width: 500px;
+            height: 500px;
+           display: inline-flex;
+        
+          
+            justify-content: center;
+            margin-top: 20px;
+            border-radius: 10px;
+
+        }
+       input{
+
+        display: inline-block;
+      
+        margin-bottom: 20px;
+       }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de formulario</h1>
+    <div>
+
+        <form action="tabela.html" method="get">
+
+            <label for="inome">Nome : </label>
+            <input type="text" name="Nome" id="inome">  <br>
+
+            <label for="isenha">Senha :</label>
+            <input type="password" id="isenha"> <br>
+
+           <label for="">Masculino</label> <input type="radio" name="sexo">
+            <label for="">feminino</label> <input type="radio" name="sexo"> <br>
+
+            <label for="filtro">Filtrar</label>
+            <select name="fltro" id="">
+
+                <option value="">Mais barato</option>
+                <option value="">Mais barato</option>
+                <option value="">Mais barato</option>
+                <option value="">Mais barato</option>
+                <option value="">Mais barato</option>
+            </select> <br> <br>
+
+            <textarea name="" id="" cols="30" rows="10">Deixe seu feedback</textarea><br><br>
+
+            <input type="submit" value="enviar">
+            <input type="reset" value="limpar">
+
+            
+            
+        </form>
+
+    </div>
+   
+</body>
+</html>

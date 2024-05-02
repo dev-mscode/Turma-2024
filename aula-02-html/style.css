@@ -1,0 +1,101 @@
+
+/* ATIVIDADE DA AULA 03 - MS CODE */
+
+* {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: red;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: antiquewhite;
+}
+
+footer {
+    background-color: rgb(92, 92, 92);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 70vh;
+}
+
+a{
+background-color: rgb(201, 101, 30);
+text-decoration: none;
+color: black;
+padding: 13px 35px;
+margin: 50px;
+}
+
+a:hover{
+    background-color: rgb(165, 79, 17);
+    cursor: pointer;
+    }
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main h2{
+    margin: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 300px;
+    padding: 5px;
+}
+
+select{
+    width: 300px;
+    padding: 5px;
+}
+
+label{
+    font-weight: bold;
+}
+
+input[type="submit"]{
+    width: 100px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(170, 31, 31);
+    border: none;
+}
+
+input[type="submit"]:hover{ 
+    background-color: rgb(131, 29, 29);
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse; 
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}

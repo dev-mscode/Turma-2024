@@ -1,33 +1,23 @@
-const menuOpen = document.getElementById('menu_open');
-const menuClose = document.getElementById('menu_close');
-const menuMobil = document.getElementById('menu_mobile');
+$(document).ready(function() {
+  var userData = {};
+  var cartItems = [];
+  var totalPrice = 0;
 
-const nav = document.getElementById('nav');
+  $('#saveButton').on('click', function(event) {
+      event.preventDefault();
+      userData.name = $('#name').val();
+      userData.email = $('#email').val();
 
+      $('#userInfo').html(`Nome: ${userData.name}, Email: ${userData.email}`);
+      $('#userInfo').removeClass('hide');
+      $('.add-to-cart').prop('disabled', false);
+  });
 
-let isMenuOpen = false;
+  window.adicionarAoCarrinho = function(itemName, itemPrice) {
+      cartItems.push({ name: itemName, price: itemPrice });
+      totalPrice += itemPrice;
 
-function toogleMenu() {
-  if (isMenuOpen) {
-    menuOpen.classList.remove('hide');
-    menuClose.classList.add('hide');
-  }
-
-  else {
-    menuOpen.classList.add('hide');
-    menuClose.classList.remove('hide');
-  }
-
-  isMenuOpen = !isMenuOpen;
-
-  if (isMenuOpen) {
-    nav.style.display = 'block';
-  }
-
-  else {
-    nav.style.display = 'none';
-  }
-}
-
-menuMobil.addEventListener('click', toogleMenu);
-
+      $('#cartItems').append(`<li>${itemName} - R$ ${itemPrice.toFixed(2)}</li>`);
+      $('#totalPrice').text(totalPrice.toFixed(2));
+  };
+});

@@ -5,12 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zara - HOME</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
   <div class="navbar">
     <a class="logo">
       <svg width="180" height="56" viewBox="0 0 180 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,24 +19,8 @@
       </svg>
     </a>
 
-    <div id="menu_mobile">
-      <div id="menu_open">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </div>
-
-      <div id="menu_close" class="hide">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-        </svg>
-
-      </div>
-    </div>
-    <nav id="nav">
-      <a href="#" class="active">home</a>
+    <nav>
+      <a href="#">home</a>
       <div class="dropdown">
         <button class="dropdown-toggle" type="button">
           collections
@@ -54,317 +37,59 @@
       <a href="#">about</a>
       <a href="#">contact</a>
       <a href="#">shop</a>
+      <a href="#" class="active">cart</a>
     </nav>
     </ul>
   </div>
 
-  <main>
-    <section class="shop-title">
-      <h1>New Arrivals</h1>
-      <p>Checkout out the latest released of Basic Tees, new and improved with four apenings!</p>
-    </section>
+  <div class="content">
+    <div class="form-container">
+      <h3>Carrinho</h3>
 
-    <section class="shop-main">
-      <div class="main-filter">
-        <section class="form-color">
-          <h2>Color</h2>
-          <div class="form-item">
-            <input type="checkbox" class="form-check" name="filter-color" id="color-white">
-            <label for="color-white">White</label>
-          </div>
-          <div class="form-item">
-            <input type="checkbox" name="filter-color" id="color-beige">
-            <label for="color-beige">Beige</label>
-          </div>
-          <div class="form-item">
-            <input type="checkbox" name="filter-color" id="color-blue">
-            <label for="color-blue">Blue</label>
-          </div>
-          <div class="form-item">
-            <input type="checkbox" name="filter-color" id="color-brown">
-            <label for="color-brown">Brown</label>
-          </div>
-          <div class="form-item">
-            <input type="checkbox" name="filter-color" id="color-green">
-            <label for="color-green">Green</label>
-          </div>
+      <form id="cartForm">
+        <input type="text" id="name" placeholder="Nome">
+        <input type="email" id="email" placeholder="Email">
+        <button id="saveButton" type="submit">Salvar</button>
+      </form>
+    </div>
 
-          <div class="form-item">
-            <input type="checkbox" name="filter-color" id="color-purple">
-            <label for="color-purple">Purple</label>
-          </div>
-        </section>
+    <div id="userInfo" class="hide"></div>
 
-        <section class="form-category">
-          <h2>Category</h2>
-          <div class="form-item">
-            <input type="checkbox" name="filter-category" id="category-new-arrivals">
-            <label for="category-new-arrivals">All New Arrivals</label>
-          </div>
-        </section>
-
-        <section class="form-sizes">
-          <h2>Sizes</h2>
-          <div class="form-item">
-            <input type="checkbox" name="sizes-color" id="sizes-xs">
-            <label for="sizes-xs">XS</label>
-          </div>  
-        </section>
+    <div class="products">
+      <div class="product">
+        <span>Item 1</span>
+        <span class="price">R$ 10,00</span>
+        <button class="add-to-cart" onclick="adicionarAoCarrinho('Item 1', 10)" disabled>Adicionar ao Carrinho</button>
       </div>
-      <div class="products-wapper">
-
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <img class="product-image" src="https://source.unsplash.com/random/400x400/?clothes&unique1"
-              alt="Basic Tee 8-pack" class="product-image">
-          </div>
-
-          <div class="product-content">
-            <h2 class="product-title">Basic Tee 8-pack</h2>
-            <p class="product-description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, et.
-              Impedit debitis doloremque, namnecessitatibus, quae assumenda perferendis eveniet.
-            </p>
-
-            <span class="product-variations">
-              8 colors
-            </span>
-            <div class="product-footer">
-              <span class="product-price">
-                $256
-              </span>
-              <button class="product-cart-button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path
-                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                </svg>
-                <span>Add to cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <img class="product-image" src="https://source.unsplash.com/random/400x400/?clothes&unique2"
-              alt="Basic Tee 8-pack" class="product-image">
-          </div>
-
-          <div class="product-content">
-            <h2 class="product-title">Basic Tee 8-pack</h2>
-            <p class="product-description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, et.
-              Impedit debitis doloremque, namnecessitatibus, quae assumenda perferendis eveniet.
-            </p>
-
-            <span class="product-variations">
-              8 colors
-            </span>
-            <div class="product-footer">
-              <span class="product-price">
-                $256
-              </span>
-              <button class="product-cart-button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path
-                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                </svg>
-                <span>Add to cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <img class="product-image" src="https://source.unsplash.com/random/400x400/?clothes&unique3"
-              alt="Basic Tee 8-pack" class="product-image">
-          </div>
-
-          <div class="product-content">
-            <h2 class="product-title">Basic Tee 8-pack</h2>
-            <p class="product-description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, et.
-              Impedit debitis doloremque, namnecessitatibus, quae assumenda perferendis eveniet.
-            </p>
-
-            <span class="product-variations">
-              8 colors
-            </span>
-            <div class="product-footer">
-              <span class="product-price">
-                $256
-              </span>
-              <button class="product-cart-button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path
-                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                </svg>
-                <span>Add to cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <img class="product-image" src="https://source.unsplash.com/random/400x400/?clothes&unique4"
-              alt="Basic Tee 8-pack" class="product-image">
-          </div>
-
-          <div class="product-content">
-            <h2 class="product-title">Basic Tee 8-pack</h2>
-            <p class="product-description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, et.
-              Impedit debitis doloremque, namnecessitatibus, quae assumenda perferendis eveniet.
-            </p>
-
-            <span class="product-variations">
-              8 colors
-            </span>
-            <div class="product-footer">
-              <span class="product-price">
-                $256
-              </span>
-              <button class="product-cart-button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path
-                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                </svg>
-                <span>Add to cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <img class="product-image" src="https://source.unsplash.com/random/400x400/?clothes&unique5"
-              alt="Basic Tee 8-pack" class="product-image">
-          </div>
-
-          <div class="product-content">
-            <h2 class="product-title">Basic Tee 8-pack</h2>
-            <p class="product-description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, et.
-              Impedit debitis doloremque, namnecessitatibus, quae assumenda perferendis eveniet.
-            </p>
-
-            <span class="product-variations">
-              8 colors
-            </span>
-            <div class="product-footer">
-              <span class="product-price">
-                $256
-              </span>
-              <button class="product-cart-button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path
-                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                </svg>
-                <span>Add to cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <img class="product-image" src="https://source.unsplash.com/random/400x400/?clothes&unique6"
-              alt="Basic Tee 8-pack" class="product-image">
-          </div>
-
-          <div class="product-content">
-            <h2 class="product-title">Basic Tee 8-pack</h2>
-            <p class="product-description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, et.
-              Impedit debitis doloremque, namnecessitatibus, quae assumenda perferendis eveniet.
-            </p>
-
-            <span class="product-variations">
-              8 colors
-            </span>
-            <div class="product-footer">
-              <span class="product-price">
-                $256
-              </span>
-              <button class="product-cart-button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path
-                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                </svg>
-                <span>Add to cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <img class="product-image" src="https://source.unsplash.com/random/400x400/?clothes&unique7"
-              alt="Basic Tee 8-pack" class="product-image">
-          </div>
-
-          <div class="product-content">
-            <h2 class="product-title">Basic Tee 8-pack</h2>
-            <p class="product-description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, et.
-              Impedit debitis doloremque, namnecessitatibus, quae assumenda perferendis eveniet.
-            </p>
-
-            <span class="product-variations">
-              8 colors
-            </span>
-            <div class="product-footer">
-              <span class="product-price">
-                $256
-              </span>
-              <button class="product-cart-button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path
-                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                </svg>
-                <span>Add to cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <img class="product-image" src="https://source.unsplash.com/random/400x400/?clothes&unique8"
-              alt="Basic Tee 8-pack" class="product-image">
-          </div>
-
-          <div class="product-content">
-            <h2 class="product-title">Basic Tee 8-pack</h2>
-            <p class="product-description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, et.
-              Impedit debitis doloremque, namnecessitatibus, quae assumenda perferendis eveniet.
-            </p>
-
-            <span class="product-variations">
-              8 colors
-            </span>
-            <div class="product-footer">
-              <span class="product-price">
-                $256
-              </span>
-              <button class="product-cart-button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path
-                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                </svg>
-                <span>Add to cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
+      <div class="product">
+        <span>Item 2</span>
+        <span class="price">R$ 20,00</span>
+        <button class="add-to-cart" onclick="adicionarAoCarrinho('Item 2', 20)" disabled>Adicionar ao Carrinho</button>
       </div>
-    </section>
-  </main>
+      <div class="product">
+        <span>Item 3</span>
+        <span class="price">R$ 30,00</span>
+        <button class="add-to-cart" onclick="adicionarAoCarrinho('Item 3', 30)" disabled>Adicionar ao Carrinho</button>
+      </div>
+      <div class="product">
+        <span>Item 4</span>
+        <span class="price">R$ 27,37</span>
+        <button class="add-to-cart" onclick="adicionarAoCarrinho('Item 4', 27.37)" disabled>Adicionar ao Carrinho</button>
+      </div>
+      <div class="product">
+        <span>Item 5</span>
+        <span class="price">R$ 399,80</span>
+        <button class="add-to-cart" onclick="adicionarAoCarrinho('Item 5', 399.80)" disabled>Adicionar ao Carrinho</button>
+      </div>
+    </div>
 
-  <script src="main.js" />
+    <div id="cart">
+      <h2>Carrinho</h2>
+      <ul id="cartItems"></ul>
+      <p>Total: R$ <span id="totalPrice">0,00</span></p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
 </body>
-
 </html>

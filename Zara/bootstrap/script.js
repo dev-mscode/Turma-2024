@@ -1,8 +1,8 @@
-const menuOpen = document.getElementById('menu_open');
-const menuClose = document.getElementById('menu_close');
-const menuMobil = document.getElementById('menu_mobile');
+const menuOpen = $('#menu_open');
+const menuClose = $('#menu_close');
+const menuMobil = $('#menu_mobile');
 
-const nav = document.getElementById('nav');
+const nav = $('#nav');
 
 
 let isMenuOpen = false;

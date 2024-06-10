@@ -6,7 +6,7 @@ const filterClose = document.getElementById('filter_close');
 const filterMenu = document.getElementById('filter_menu');
 
 const nav = document.getElementById('nav');
-const filter = document.getElementById('filter')
+const filter = document.getElementById('filter');
 
 let isMenuOpen = false;
 let isFilterOpen = false;

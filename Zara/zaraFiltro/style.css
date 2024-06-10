@@ -125,6 +125,8 @@ nav button {
   transition: background-color 0.3s;
 }
 
+/* Section Product */
+
 .products-wapper {
   margin-top: 50px;
   display: flex;
@@ -133,7 +135,6 @@ nav button {
   justify-content: center;
 }
 
-/* Section Product */
 .product-card {
   display: flex;
   flex-direction: column;

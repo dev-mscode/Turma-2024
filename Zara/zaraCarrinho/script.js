@@ -6,14 +6,20 @@ function adicionarAoCarrinho(item, preco) {
     document.getElementById('totalPrice').innerHTML = total;
     
     const li = $("<li></li>");
-    const ctd = `<span class="titleItems">${item}</span><br>&emsp;<span class="priceItems">R$${preco}</span><br>`;
+    const ctd = `
+        <span class="titleItems">
+            ${item}
+        </span>
+        <br> &emsp;
+        <span class="priceItems">
+            R$${preco}
+        </span><br>`;
     li.html(ctd);
     $('#cartItems').append(ctd);
     $('.titleItems').css({"font-size": "20px", "font-weigth": "300"}); $('.priceItems').css({"font-size": "15px"});
 }
 
 $(document).ready(function(){
-
     $('#saveButton').click(function(event){
         event.preventDefault();
 

@@ -1,33 +1,35 @@
-const menuOpen = $('#menu_open');
-const menuClose = $('#menu_close');
-const menuMobil = $('#menu_mobile');
+const filterOpen = document.getElementById('filter_open');
+const filterClose = document.getElementById('filter_close');
+const filterMenu = document.getElementById('filter_menu');
 
-const nav = $('#nav');
+const filter = document.getElementById('filter');
 
+let isFilterOpen = false;
 
-let isMenuOpen = false;
-
-function toogleMenu() {
-  if (isMenuOpen) {
-    menuOpen.classList.remove('hide');
-    menuClose.classList.add('hide');
+function toogleFilter() {
+  if (isFilterOpen) {
+    filterOpen.classList.remove('hide');
+    filterOpen.classList.add('hide');
   }
 
   else {
-    menuOpen.classList.add('hide');
-    menuClose.classList.remove('hide');
+    filterOpen.classList.add('hide');
+    filterClose.classList.remove('hide');
   }
 
-  isMenuOpen = !isMenuOpen;
+  isFilterOpen = !isFilterOpen;
 
-  if (isMenuOpen) {
-    nav.style.display = 'block';
+  if (isFilterOpen) {
+    filter.style.display = 'flex';
+    filterOpen.style.display = 'block';
+    filterClose.style.display = 'none';
   }
 
   else {
-    nav.style.display = 'none';
+    filter.style.display = 'none';
+    filterOpen.style.display = 'none';
+    filterClose.style.display = 'block';    
   }
 }
 
-menuMobil.addEventListener('click', toogleMenu);
-
+filterMenu.addEventListener('click', toogleFilter);

@@ -1,56 +1,33 @@
-$(document).ready(function() {
-    const $n1 = $("#n1");
-    const $n2 = $("#n2");
-    const $resultado = $("#resultado");
+const menuOpen = document.getElementById('menu_open');
+const menuClose = document.getElementById('menu_close');
+const menuMobil = document.getElementById('menu_mobile');
 
-    $("#soma").on("click", function() {
-        if ($n1.val() === "" || $n2.val() === "") {
-            alert("Por favor, insira valores nos dois campos.");
-            return;
-        }
-        const calculo = parseFloat($n1.val()) + parseFloat($n2.val());
-        $resultado.text(calculo);
-    });
+const nav = document.getElementById('nav');
 
-    $("#subtracao").on("click", function() {
-        if ($n1.val() === "" || $n2.val() === "") {
-            alert("Por favor, insira valores nos dois campos.");
-            return;
-        }
-        const calculo = parseFloat($n1.val()) - parseFloat($n2.val());
-        $resultado.text(calculo);
-    });
 
-    $("#divisao").on("click", function() {
-        if ($n1.val() === "" || $n2.val() === "") {
-            alert("Por favor, insira valores nos dois campos.");
-            return;
-        }
-        const calculo = parseFloat($n1.val()) / parseFloat($n2.val());
-        $resultado.text(calculo);
-    });
+let isMenuOpen = false;
 
-    $("#multiplicacao").on("click", function() {
-        if ($n1.val() === "" || $n2.val() === "") {
-            alert("Por favor, insira valores nos dois campos.");
-            return;
-        }
-        const calculo = parseFloat($n1.val()) * parseFloat($n2.val());
-        $resultado.text(calculo);
-    });
+function toogleMenu() {
+  if (isMenuOpen) {
+    menuOpen.classList.remove('hide');
+    menuClose.classList.add('hide');
+  }
 
-    const $nomeInput = $("#nome");
-    const $saudacao = $("#saudacao");
-    const $confirmarNomeBtn = $("#confirmarNome");
-    const $nomeSection = $("#nomeSection");
+  else {
+    menuOpen.classList.add('hide');
+    menuClose.classList.remove('hide');
+  }
 
-    $confirmarNomeBtn.on("click", function() {
-        if ($nomeInput.val() === "") {
-            alert("Por favor, insira seu nome.");
-            return;
-        }
-        const nome = $nomeInput.val();
-        $saudacao.text(`Olá mundo, ${nome}`);
-        $nomeSection.hide();
-    });
-});
+  isMenuOpen = !isMenuOpen;
+
+  if (isMenuOpen) {
+    nav.style.display = 'block';
+  }
+
+  else {
+    nav.style.display = 'none';
+  }
+}
+
+menuMobil.addEventListener('click', toogleMenu);
+

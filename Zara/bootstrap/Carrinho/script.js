@@ -1,24 +1,3 @@
-var total = 0;
-
-function adicionarAoCarrinho(item, preco) {
-    total += preco;
-    total = parseFloat(total.toFixed(2));
-    document.getElementById('totalPrice').innerHTML = total;
-    
-    const li = $(`<li></li>`);
-    const ctd = `
-        <span class="titleItems">
-            ${item}
-        </span>
-        <br> &emsp;
-        <span class="priceItems">
-            R$${preco}
-        </span><br>`;
-    li.html(ctd);
-    $('#cartItems').append(ctd);
-    $('.titleItems').css({"font-size": "20px", "font-weigth": "300"}); $('.priceItems').css({"font-size": "15px"});
-}
-
 $(document).ready(function(){
     $('#saveButton').click(function(event){
         event.preventDefault();
@@ -38,3 +17,44 @@ $(document).ready(function(){
         }
     });
 });
+
+var total = 0;
+const produto = [];
+
+function adicionarAoCarrinho(item, preco) {
+  total += preco;
+  total = parseFloat(total.toFixed(2));
+  document.getElementById('totalPrice').innerHTML = `R$${total.toFixed(2)}`;
+
+  let vrf = produto.find(prod => prod.nome === item);
+  if (vrf) {
+    vrf.qtd += 1;
+  } else {
+    produto.push({
+      nome: item,
+      preco: preco,
+      qtd: 1
+    });
+  }
+  addlista();
+}
+
+function addlista() {
+  $('#cartItems').empty();
+
+  produto.forEach(prod => {
+    const li = $('<li></li>');
+    const ctd = `
+      <span class="titleItems">
+        ${prod.nome} (${prod.qtd})
+      </span>
+      <br> &emsp;
+      <span class="priceItems">
+        R$${prod.preco}
+      </span><br>`;
+    li.html(ctd);
+    $('#cartItems').append(li);
+    $('.titleItems').css({"font-size": "20px", "font-weight": "400"});
+    $('.priceItems').css({"font-size": "18px"});
+  });
+}

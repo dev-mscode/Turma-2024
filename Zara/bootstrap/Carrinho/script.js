@@ -1,16 +1,11 @@
 var total = 0;
 
-let produtos = {
-    item: "",
-    preco: 0.00
-};
-
 function adicionarAoCarrinho(item, preco) {
     total += preco;
     total = parseFloat(total.toFixed(2));
     document.getElementById('totalPrice').innerHTML = total;
     
-    const li = $("<li></li>");
+    const li = $(`<li></li>`);
     const ctd = `
         <span class="titleItems">
             ${item}
@@ -32,7 +27,7 @@ $(document).ready(function(){
         var email = $('#email').val();
 
         if (nome != "" && email != "") {
-            $('.add-to-cart').attr('disabled', false);   
+            $('.btn').attr('disabled', false);
             $('#userInfo').show(function(){;
                 const p = $('<p></p>');
                 const dados = `Nome : ${nome} <br> Email: ${email}`;
